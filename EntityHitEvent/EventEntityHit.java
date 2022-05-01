@@ -1,17 +1,17 @@
 import client.event.Event;
-import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
 
 //This event gets called whenever mc.theplayer hits an entity
 
 public class EventEntityHit extends Event {
-	public LocalPlayer hitter;
-	public LivingEntity hittenEntity;
+	public Player hitter;
+	public Entity hittenEntity;
 	public double distance;
 	
-	public EventEntityHit(LocalPlayer player , LivingEntity hitEntity) {
-		this.hittenEntity = hitEntity;
-		this.hitter = player;
+	public EventEntityHit(Player pPlayer , Entity pTargetEntity) {
+		this.hittenEntity = pTargetEntity;
+		this.hitter = pPlayer;
 		this.distance = hitter.position().distanceToSqr(hittenEntity.position());
 	}
 }
