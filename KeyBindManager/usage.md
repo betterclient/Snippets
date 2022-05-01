@@ -14,6 +14,8 @@
 
 ![image](https://user-images.githubusercontent.com/103489620/166139261-76c933f4-75b8-4375-bd08-fcfa6e465999.png)
 
-5.Congrats! Now you have keybinds and categories
+5.Run the game.
+
+6.Congrats! Now you have keybinds and categories
 
 ![image](https://user-images.githubusercontent.com/103489620/166139602-5b8f225b-88ee-4b8c-9a67-a8835688b7b1.png)
