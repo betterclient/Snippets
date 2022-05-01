@@ -1,4 +1,4 @@
-1.Go to net.minecraft.client.option.java and change keymapping variable to non final.
+1.Go to net.minecraft.client.option.java and change keymappings variable to non final.
 
 ![image](https://user-images.githubusercontent.com/103489620/166139178-06c2b936-ad07-44a5-89d4-a69abc783b12.png)
 
