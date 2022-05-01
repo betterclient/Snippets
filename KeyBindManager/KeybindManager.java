@@ -21,7 +21,8 @@ public class KeybindManager {
 	}
 	
 	public static void addKeyMapping(KeyMapping a) {
-		maps.add(a);
+		if(!maps.contains(a))
+			maps.add(a);
 	}
 	
 	public static void removeKeyMapping(KeyMapping a) {
@@ -29,7 +30,8 @@ public class KeybindManager {
 	}
 	
 	public static void addCategory(String key , Integer value) {
-		categories.put(key, value);
+		if(!categories.containsKey(key) && !categories.containsValue(value))
+			categories.put(key, value);
 	}
 	
 	public static void removeCategory(String key , Integer value) {
@@ -38,15 +40,24 @@ public class KeybindManager {
 
 	public static void processInputs() {
 		for(Entry<String, Integer> key : categories.entrySet()) {
-			KeyMapping.CATEGORY_SORT_ORDER.put(key.getKey(), key.getValue());
+			if(!KeyMapping.CATEGORY_SORT_ORDER.containsKey(key.getKey()) && !KeyMapping.CATEGORY_SORT_ORDER.containsValue(key.getValue()))
+				KeyMapping.CATEGORY_SORT_ORDER.put(key.getKey(), key.getValue());
 		}
 		
 		for(KeyMapping map : maps) {
 			if(!KeyMapping.CATEGORY_SORT_ORDER.containsKey(map.getCategory())){
 				throw new NullPointerException("Reference to non existing category.");
 			}
-			Minecraft.getInstance().options.keyMappings = ArrayUtils.add(Minecraft.getInstance().options.keyMappings, map);
-			fixKeyConflicts(Minecraft.getInstance().options.keyMappings, new KeyMapping[] {map});
+			boolean contains = false;
+			for(KeyMapping maap : Minecraft.getInstance().options.keyMappings) {
+				if(maap == map.ownKeyMap) {
+					contains = true;
+				}
+			}
+			if(!contains) {
+				Minecraft.getInstance().options.keyMappings = ArrayUtils.add(Minecraft.getInstance().options.keyMappings, map);
+				fixKeyConflicts(Minecraft.getInstance().options.keyMappings, new KeyMapping[] {map});
+			}
 		}
 	}
 	
