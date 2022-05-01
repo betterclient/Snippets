@@ -18,6 +18,8 @@ Note: This Snippet is made for 1.18.1.
 
 5.Run the game.
 
+![image](https://user-images.githubusercontent.com/103489620/166149055-d9fc897e-913f-48d3-a3fe-474c818a63fb.png)
+
 6.Congrats! Now you have keybinds and categories.
 
 ![image](https://user-images.githubusercontent.com/103489620/166139602-5b8f225b-88ee-4b8c-9a67-a8835688b7b1.png)
