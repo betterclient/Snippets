@@ -7,7 +7,6 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
-import net.optifine.util.KeyUtils;
 
 public class KeybindManager {
 	private static ArrayList<KeyMapping> maps = new ArrayList<>();
