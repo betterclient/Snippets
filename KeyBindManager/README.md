@@ -1,4 +1,4 @@
-Note: This Snippet is made for 1.18.1.
+Note: This Snippet is made for 1.18.1 with optifine (Optifine requirment will be removed soon).
 
 1.Go to net.minecraft.client.option.java and change keymappings variable to non final.
 
