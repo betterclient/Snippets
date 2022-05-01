@@ -45,7 +45,32 @@ public class KeybindManager {
 		}
 		for(KeyMapping map : maps) {
 			Minecraft.getInstance().options.keyMappings = ArrayUtils.add(Minecraft.getInstance().options.keyMappings, map);
-			KeyUtils.fixKeyConflicts(Minecraft.getInstance().options.keyMappings, new KeyMapping[] {map});
+			fixKeyConflicts(Minecraft.getInstance().options.keyMappings, new KeyMapping[] {map});
 		}
 	}
+	
+	public static void fixKeyConflicts(KeyMapping[] keys, KeyMapping[] keysPrio)
+    	{
+        	Set<String> set = new HashSet<>();
+        	for (int i = 0; i < keysPrio.length; ++i)
+        	{
+        		KeyMapping keymapping = keysPrio[i];
+       	 		set.add(getId(keymapping));
+       		 }
+	
+       		 Set<KeyMapping> set1 = new HashSet<>(Arrays.asList(keys));
+       		 set1.removeAll(Arrays.asList(keysPrio));
+
+       		 for (KeyMapping keymapping1 : set1)
+       		 {
+       	 	    String s = getId(keymapping1);
+	
+       	  	   if (set.contains(s))
+       	    	   {
+       	    	     keymapping1.setKey(InputConstants.bv);
+       	     	    }
+       		 }
+      	}
+	
+	
 }
