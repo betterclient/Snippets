@@ -37,12 +37,14 @@ public class KeybindManager {
 	}
 
 	public static void processInputs() {
-		for(KeyMapping map : Minecraft.getInstance().options.keyMappings) {
-			for(Entry<String, Integer> key : categories.entrySet()) {
-				map.CATEGORY_SORT_ORDER.put(key.getKey(), key.getValue());
-			}
+		for(Entry<String, Integer> key : categories.entrySet()) {
+			KeyMapping.CATEGORY_SORT_ORDER.put(key.getKey(), key.getValue());
 		}
+		
 		for(KeyMapping map : maps) {
+			if(!KeyMapping.CATEGORY_SORT_ORDER.containsKey(map.getCategory())){
+				throw new NullPointerException("Reference to non existing category.");
+			}
 			Minecraft.getInstance().options.keyMappings = ArrayUtils.add(Minecraft.getInstance().options.keyMappings, map);
 			fixKeyConflicts(Minecraft.getInstance().options.keyMappings, new KeyMapping[] {map});
 		}
