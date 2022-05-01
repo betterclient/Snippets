@@ -50,7 +50,7 @@ public class KeybindManager {
 			}
 			boolean contains = false;
 			for(KeyMapping maap : Minecraft.getInstance().options.keyMappings) {
-				if(maap == map) {
+				if(maap.equals(map)) {
 					contains = true;
 				}
 			}
