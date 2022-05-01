@@ -1,10 +1,10 @@
 Note: This Snippet is made for 1.18.1.
 
-1.Go to net.minecraft.client.option.java and change keymappings variable to non final.
+1.Go to net.minecraft.client.Pptions.java and change keymappings variable to non final.
 
 ![image](https://user-images.githubusercontent.com/103489620/166139178-06c2b936-ad07-44a5-89d4-a69abc783b12.png)
 
-2.Go to net.minecraft.client.keymapping.java and make CATEGORY_SORT_ORDER public.
+2.Go to net.minecraft.client.KeyMapping.java and make CATEGORY_SORT_ORDER public.
 
 ![image](https://user-images.githubusercontent.com/103489620/166139475-0b831f05-2973-4afc-803c-5cbade98a561.png)
 
