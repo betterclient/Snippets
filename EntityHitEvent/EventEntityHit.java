@@ -12,6 +12,6 @@ public class EventEntityHit extends Event {
 	public EventEntityHit(Player pPlayer , Entity pTargetEntity) {
 		this.hittenEntity = pTargetEntity;
 		this.hitter = pPlayer;
-		this.distance = hitter.position().distanceToSqr(hittenEntity.position());
+		this.distance = hitter.position().distanceTo(hittenEntity.position());
 	}
 }
